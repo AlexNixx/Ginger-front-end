@@ -1,0 +1,24 @@
+.createCart {
+	padding: 2rem;
+	width: 20rem;
+	height: 15rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	color: var(--color-black);
+	background-color: var(--color-grey);
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 15px 0px,
+		rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+	cursor: pointer;
+
+	.title {
+		font-size: 1.2rem;
+		font-weight: var(--fw-bold);
+	}
+	svg {
+		fill: var(--color-blue);
+		font-size: 2rem;
+	}
+}

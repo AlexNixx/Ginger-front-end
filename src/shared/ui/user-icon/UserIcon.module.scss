@@ -1,0 +1,27 @@
+.userIcon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 25px;
+	height: 25px;
+	background-color: var(--color-blue);
+	border-radius: 50%;
+	cursor: pointer;
+
+	.userLetter {
+		color: #fff;
+		pointer-events: none;
+	}
+}
+
+@media screen and (max-width: 765px) {
+	.userIcon {
+		margin: 1rem 0;
+	}
+}
+
+@media screen and (min-width: 765px) {
+	.userIcon {
+		margin: 0 1rem;
+	}
+}

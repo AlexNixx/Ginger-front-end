@@ -1,0 +1,7 @@
+.productGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 16rem);
+	flex-wrap: wrap;
+	justify-items: center;
+	grid-gap: 3rem;
+}
