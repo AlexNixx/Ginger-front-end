@@ -1,0 +1,33 @@
+@use 'shared/styles/abstracts/mixins' as m;
+
+.page {
+	height: 100%;
+	width: 100%;
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		line-height: 1.9rem;
+
+		.title {
+			font-size: var(--fs-xl);
+			color: var(--color-primary);
+		}
+
+		p {
+			font-size: var(--fs-md);
+		}
+	}
+}
+
+@include m.desktop {
+	.page {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.container {
+			width: 50vw;
+		}
+	}
+}

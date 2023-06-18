@@ -1,0 +1,30 @@
+@use 'shared/styles/abstracts/mixins' as m;
+
+.form {
+	display: grid;
+	gap: 1rem;
+	width: 100%;
+	max-width: 40rem;
+	height: 100%;
+
+	.formBlock {
+		display: grid;
+		gap: 1rem;
+
+		.title {
+			font-size: var(--fs-lg);
+			color: var(--color-primary);
+		}
+
+		.line {
+			display: grid;
+			gap: 1rem;
+			width: 100%;
+
+			@include m.tablet {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			}
+		}
+	}
+}

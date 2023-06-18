@@ -1,0 +1,50 @@
+@use 'shared/styles/abstracts/mixins' as m;
+
+.accordion {
+	display: flex;
+	flex-direction: column;
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+
+		.title {
+			font-size: var(--fs-lg);
+			font-weight: var(--fw-bold);
+		}
+
+		svg {
+			font-size: var(--fs-xl);
+		}
+
+		&:hover {
+			color: var(--color-primary);
+		}
+	}
+
+	.content {
+		overflow: hidden;
+
+		.contendBody {
+			margin: 2rem 0 0 0;
+
+			@include m.desktop {
+				margin: 1rem 0 0 0;
+			}
+		}
+	}
+
+	.line {
+		width: 100%;
+		height: 2px;
+		background-color: var(--color-grey);
+		border-radius: 5px;
+		margin: 2rem 0;
+
+		@include m.desktop {
+			margin: 1rem 0;
+		}
+	}
+}

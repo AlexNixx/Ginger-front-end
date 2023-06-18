@@ -1,13 +1,22 @@
-import { Outlet } from 'react-router-dom'
-import { Toaster } from 'react-hot-toast'
+import { useEffect } from 'react'
+import { Outlet, useLocation } from 'react-router-dom'
 
-import Header from 'widgets/header'
-import Footer from 'widgets/footer'
+import { Header } from 'widgets/header'
+import { Footer } from 'widgets/footer'
 
-const Layout = () => {
+export const Layout = () => {
+	const { pathname } = useLocation()
+
+	useEffect(() => {
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: 'smooth'
+		})
+	}, [pathname])
+
 	return (
 		<>
-			<Toaster />
 			<Header />
 			<main>
 				<Outlet />
@@ -16,5 +25,3 @@ const Layout = () => {
 		</>
 	)
 }
-
-export default Layout

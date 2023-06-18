@@ -1,0 +1,50 @@
+.overlay {
+	z-index: 999;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.75);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.modal {
+		display: block;
+		background-color: var(--bg-secondary);
+		color: var(--color-text);
+		width: 40%;
+		min-height: 40%;
+		padding: 1rem;
+		border-radius: 5px;
+
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 3rem;
+
+			.headerText {
+				font-size: var(--fs-lg);
+			}
+
+			.closeBtn {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 0.4rem;
+				border-radius: 50%;
+				background-color: var(--color-grey);
+			}
+		}
+
+		.content {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			min-height: 20rem;
+		}
+	}
+}

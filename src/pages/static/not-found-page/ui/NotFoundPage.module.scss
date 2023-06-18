@@ -1,0 +1,32 @@
+.page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+
+	.subtitle {
+		font-size: var(--fs-xl);
+	}
+
+	.title {
+		color: var(--color-primary);
+		font-weight: var(--fw-bold);
+		font-size: 8rem;
+		letter-spacing: 1rem;
+	}
+
+	.description {
+		font-size: var(--fs-md);
+		min-width: 250px;
+		max-width: 400px;
+		word-wrap: normal;
+	}
+
+	button {
+		width: 20rem;
+	}
+}

@@ -1,8 +1,15 @@
-import styles from "./Loader.module.scss";
+import { FC } from 'react'
+import styles from './Loader.module.scss'
 
-const Loader = () => {
+interface LoaderProps {
+	fullScreen?: boolean
+}
+
+export const Loader: FC<LoaderProps> = ({ fullScreen = false }) => {
 	return (
-		<div className={styles.full_screen}>
+		<div
+			className={fullScreen ? `${styles.fullScreen}` : `${styles.container}`}
+		>
 			<div className={styles.loader}>
 				<div></div>
 				<div></div>
@@ -10,7 +17,5 @@ const Loader = () => {
 				<div></div>
 			</div>
 		</div>
-	);
-};
-
-export { Loader };
+	)
+}

@@ -1,13 +1,13 @@
 import { useEffect } from 'react'
-import { ProductForm } from 'entities/admin-forms'
-import { getOptions } from 'feature/admin/lib/getOptions'
+import { ProductForm } from 'entities/admin'
+import { getOptions } from '../../lib/getOptions'
 
 import {
 	useGetAllBrandQuery,
 	useGetAllCategoryQuery,
 	useGetAllColorQuery,
 	useCreateProductMutation
-} from 'feature/admin/api/adminApi'
+} from 'entities/admin'
 
 import { toast } from 'react-hot-toast'
 

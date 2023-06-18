@@ -1,0 +1,20 @@
+.container {
+	.title {
+		font-weight: var(--fw-normal);
+		font-size: var(--fs-lg);
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+	// This is not the best way, but the react-multi-carousel developers
+	// set the z-index: 1000 for the arrows
+	div {
+		button {
+			z-index: var(--ui-index-1);
+		}
+	}
+}
+
+.item {
+	display: flex;
+	justify-content: center;
+}

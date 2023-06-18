@@ -1,0 +1,126 @@
+.container {
+	display: flex;
+	user-select: none;
+
+	h1,
+	span {
+		color: var(--color-primary);
+		font-size: var(--fs-xxl);
+		font-weight: var(--fw-normal);
+	}
+
+	.letterContainer {
+		position: relative;
+		width: 1.4rem;
+
+		.letter {
+			position: absolute;
+			animation: fall 1.5s ease-in-out forwards;
+			animation-delay: 0.7s;
+			transform-origin: bottom center;
+		}
+
+		.ball {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0.75rem;
+			height: 0.75rem;
+			border-radius: 50%;
+			background-color: var(--color-grey);
+
+			animation: bounce 2s ease-in-out forwards;
+		}
+	}
+}
+
+// .medium {
+// 	h1,
+// 	span {
+// 		font-size: var(--fs-xxl);
+// 	}
+
+// 	.letterContainer {
+// 		position: relative;
+// 		width: 1.15rem;
+
+// 		.letter {
+// 			left: 0.15rem;
+// 			animation: fallMedium 1s ease-in-out forwards;
+// 			animation-delay: 1.4s;
+// 			transform-origin: bottom center;
+// 		}
+
+// 		.ball {
+// 			width: 0.75rem;
+// 			height: 0.75rem;
+// 			animation: bounceMedium 2s ease-in-out forwards;
+// 		}
+// 	}
+// }
+
+// @keyframes bounce {
+// 	0% {
+// 		transform: translate(110%, -50%);
+// 	}
+// 	50% {
+// 		transform: translate(110%, -120%);
+// 	}
+// 	100% {
+// 		transform: translate(110%, 0%);
+// 	}
+// }
+
+@keyframes bounce {
+	0% {
+		transform: translate(110%, -50%);
+	}
+	25% {
+		transform: translate(110%, -120%);
+	}
+	50% {
+		transform: translate(110%, 0%);
+		opacity: 75%;
+	}
+	// 75% {
+	// 	transform: translate(110%, -120%);
+	// 	opacity: 75%;
+	// }
+	100% {
+		transform: translate(110%, -50%);
+		opacity: 0;
+	}
+}
+
+// @keyframes bounceMedium {
+// 	0% {
+// 		top: -0.25rem;
+// 	}
+// 	50% {
+// 		top: -0.75rem;
+// 	}
+// 	100% {
+// 		top: 0.15rem;
+// 	}
+// }
+
+@keyframes fall {
+	0% {
+		transform: none;
+	}
+	50% {
+		transform: translate(-20%, 10%) rotate(15deg);
+	}
+	100% {
+		transform: none;
+		// text-transform: capitalize;
+	}
+}
+// @keyframes fallMedium {
+// 	0% {
+// 		transform: none;
+// 	}
+// 	100% {
+// 		transform: translate(0.5rem, 0.5rem) rotate(-20deg);
+// 	}
+// }

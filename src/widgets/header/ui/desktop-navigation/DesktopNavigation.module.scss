@@ -1,0 +1,30 @@
+@use 'shared/styles/abstracts/mixins' as m;
+
+.navigation {
+	width: 50%;
+	padding: 1.5rem;
+
+	ul {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		font-weight: var(--fw-bold);
+		font-size: var(--fs-md);
+		li {
+			cursor: pointer;
+			&:hover {
+				color: var(--color-primary);
+			}
+		}
+	}
+
+	@include m.lg-desktop {
+		width: 40%;
+	}
+}
+
+.userAction {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}

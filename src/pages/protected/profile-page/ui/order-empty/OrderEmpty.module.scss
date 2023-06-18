@@ -1,0 +1,37 @@
+@use 'shared/styles/abstracts/mixins' as m;
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 2rem;
+	width: 100%;
+	height: 100%;
+	h1 {
+		font-size: var(--fs-lg);
+	}
+	img {
+		height: 15rem;
+		width: 15rem;
+
+		@include m.tablet {
+			height: 20rem;
+			width: 20rem;
+		}
+	}
+	h3 {
+		font-size: var(--fs-md);
+	}
+	button {
+		width: 20rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		svg {
+			font-size: var(--fs-md);
+		}
+	}
+}

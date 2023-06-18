@@ -1,0 +1,48 @@
+@use 'shared/styles/abstracts/mixins' as m;
+
+.page {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	gap: 2rem;
+
+	> section {
+		padding: 2rem;
+		border-radius: 5px;
+		background-color: var(--bg-secondary);
+		box-shadow: var(--box-shadow);
+		width: 100%;
+	}
+
+	.reviewBody {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	@include m.desktop {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		.description {
+			grid-column: 1 / 3;
+		}
+
+		.characteristics {
+			grid-column: auto;
+			min-height: 35rem;
+			max-height: 45rem;
+		}
+
+		.review {
+			grid-column: auto;
+			min-height: 35rem;
+			max-height: 45rem;
+		}
+
+		.recommendation {
+			grid-column: 1 / 3;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+.error {
+	display: flex;
+	align-items: center;
+	font-size: 0.85rem;
+	color: var(--color-error);
+	svg {
+		margin-right: 0.35rem;
+	}
+}

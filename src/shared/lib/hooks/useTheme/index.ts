@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState, useLayoutEffect, useEffect } from 'react'
 
 const preferDarkSchema =
 	window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -9,7 +9,7 @@ function useTheme() {
 		localStorage.getItem('theme') || defaultTheme
 	)
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		document.body.setAttribute('data-theme', theme)
 		localStorage.setItem('theme', theme)
 	}, [theme])
@@ -18,7 +18,9 @@ function useTheme() {
 		setTheme(theme === 'light' ? 'dark' : 'light')
 	}
 
-	return { theme, toggleTheme }
+	const isLight = theme === 'light'
+
+	return { theme, toggleTheme, isLight }
 }
 
 export { useTheme }

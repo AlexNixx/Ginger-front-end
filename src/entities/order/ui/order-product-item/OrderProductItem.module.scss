@@ -1,0 +1,46 @@
+@use 'shared/styles/abstracts/mixins' as m;
+
+.productItem {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 6rem 1fr;
+	gap: 1rem;
+	width: 100%;
+
+	@include m.tablet {
+		grid-template-columns: 6rem 1fr 10rem 15rem;
+	}
+
+	.photoContainer {
+		background-color: var(--bg-card);
+		border-radius: 5px;
+		padding: 1rem;
+		.photo {
+			width: 4rem;
+			height: 4rem;
+			object-fit: contain;
+			pointer-events: none;
+		}
+	}
+
+	.title {
+		font-weight: var(--fw-normal);
+		font-size: var(--fs-md);
+	}
+	.qty {
+		font-size: var(--fs-md);
+		color: grey;
+	}
+
+	.price {
+		font-size: var(--fs-lg);
+		font-weight: var(--fw-bold);
+		justify-self: flex-end;
+
+		span {
+			font-size: var(--fs-md);
+			font-weight: var(--fw-normal);
+			color: var(--color-grey);
+		}
+	}
+}

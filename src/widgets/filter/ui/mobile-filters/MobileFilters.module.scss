@@ -1,0 +1,44 @@
+@use 'shared/styles/abstracts/mixins' as m;
+
+.aside {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: var(--ui-index-4);
+	width: 100%;
+
+	padding: 1rem;
+	background-color: var(--bg-secondary);
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	.buttonBack {
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		background-color: transparent;
+		padding: 0;
+		height: 3rem;
+		margin-bottom: 2rem;
+
+		font-size: var(--fs-xl);
+		color: var(--color-secondary);
+		svg {
+			margin-right: 1rem;
+			height: 2rem;
+		}
+	}
+	button {
+		margin-top: 1rem;
+		min-height: 3rem;
+	}
+}
+
+@include m.tablet {
+	.aside {
+		width: 70%;
+		padding: 1rem 2rem;
+	}
+}

@@ -1,0 +1,33 @@
+@use 'shared/styles/abstracts/mixins' as m;
+
+.button {
+	font-size: var(--fs-md);
+	font-weight: var(--fw-normal);
+	border-radius: 5px;
+	background-color: transparent;
+	color: var(--color-text);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%;
+	overflow: hidden;
+	padding: 0.75rem;
+
+	border: 1px solid var(--color-grey);
+
+	&:hover {
+		border: 1px solid var(--color-primary);
+	}
+}
+
+.primary {
+	background-color: var(--color-primary);
+	color: var(--color-white);
+	border: none;
+
+	&:hover {
+		border: none;
+		background-color: var(--color-primary-hover);
+	}
+}

@@ -1,0 +1,63 @@
+@use 'shared/styles/abstracts/mixins' as m;
+
+.custom-select {
+	&__control {
+		background-color: transparent !important;
+		border: 1px solid var(--color-grey) !important;
+		box-shadow: none !important;
+		cursor: pointer !important;
+		width: 100%;
+		height: 100%;
+
+		&--menu-is-open {
+			border-color: var(--color-primary) !important;
+		}
+	}
+
+	&__single-value {
+		color: var(--color-text) !important;
+		padding: 0.3rem 0 !important;
+	}
+
+	&__input-container {
+		color: var(--color-text) !important;
+	}
+
+	&__indicator-separator {
+		display: none !important;
+	}
+
+	&__indicator {
+		color: var(--color-text) !important;
+
+		&:hover {
+			color: var(--color-primary) !important;
+		}
+	}
+
+	&__menu {
+		border: none !important;
+		border-radius: 5px !important;
+		&-list {
+			border-radius: 5px !important;
+			border: none !important;
+			padding: 0.25rem !important;
+			max-height: 10rem !important;
+
+			background-color: var(--bg-secondary) !important;
+		}
+	}
+	&__option {
+		border-radius: 5px !important;
+		cursor: pointer !important;
+		color: var(--color-text) !important;
+		&--is-focused {
+			background-color: var(--color-primary) !important;
+			color: var(--color-white) !important;
+		}
+		&--is-selected {
+			background-color: var(--color-primary) !important;
+			color: var(--color-white) !important;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	width: 100%;
+
+	.title {
+		font-size: var(--fs-xl);
+	}
+	p {
+		line-height: 1.25rem;
+		span {
+			font-weight: var(--fw-normal);
+		}
+	}
+
+	.result {
+		background-color: var(--color-primary);
+		color: var(--color-white);
+		padding: 1.5rem;
+		border-radius: 5px;
+	}
+}

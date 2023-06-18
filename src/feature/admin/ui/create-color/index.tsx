@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import { useCreateColorMutation } from 'feature/admin/api/adminApi'
-import { FeatureForm } from 'entities/admin-forms'
+import { ColorForm, useCreateColorMutation } from 'entities/admin'
+
 import { toast } from 'react-hot-toast'
 import { ColorFormValues } from 'feature/admin/lib/types'
 
@@ -23,13 +23,7 @@ const CreateColor = () => {
 		} catch (error) {}
 	}
 
-	return (
-		<FeatureForm
-			title={'Color'}
-			isColorForm={true}
-			onSubmitForm={onSubmitForm}
-		/>
-	)
+	return <ColorForm title={'Color'} onSubmitForm={onSubmitForm} />
 }
 
 export { CreateColor }

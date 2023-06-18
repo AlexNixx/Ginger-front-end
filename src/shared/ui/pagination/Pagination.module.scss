@@ -1,0 +1,28 @@
+.paginationWrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+
+	.pageItem {
+		height: 2rem;
+		width: 2rem;
+		border-radius: 50%;
+		font-weight: 600;
+
+		background-color: transparent;
+		color: var(--color-primary);
+	}
+
+	.active {
+		background-color: var(--color-primary);
+		color: var(--color-white);
+	}
+
+	.sides {
+		background-color: var(--color-white);
+
+		box-shadow: transparent 0px 0px 0px 1px, transparent 0px 0px 0px 4px,
+			rgba(0, 0, 0, 0.18) 0px 2px 4px;
+	}
+}

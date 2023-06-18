@@ -1,0 +1,53 @@
+@use 'shared/styles/abstracts/mixins' as m;
+
+.mobileNavigation {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+
+	position: fixed;
+	top: 80px;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+
+	background-color: var(--bg-secondary);
+	opacity: 95%;
+	z-index: var(--ui-index-3);
+	padding: 1.25rem 1.5rem;
+
+	@include m.tablet {
+		padding: 1.25rem 12.5rem;
+	}
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		li {
+			font-size: var(--fs-xl);
+			padding: 0 0 2rem 0;
+			border-bottom: 1px solid var(--color-grey);
+		}
+	}
+
+	.user {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		h3 {
+			font-size: var(--fs-md);
+		}
+	}
+	.cart {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		h3 {
+			font-size: var(--fs-md);
+		}
+	}
+}

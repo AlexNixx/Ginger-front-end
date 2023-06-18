@@ -1,0 +1,27 @@
+// TODO: вынести ближе к лейауту
+
+@use '../abstracts/mixins' as m;
+
+.app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	main {
+		flex-grow: 1;
+
+		background-color: var(--bg-primary);
+
+		padding: 1.5rem 1rem;
+
+		transition: 0.4s;
+
+		@include m.tablet {
+			padding: 1.5rem 3rem;
+		}
+
+		@include m.lg-desktop {
+			padding: 1.5rem 10rem;
+		}
+	}
+}

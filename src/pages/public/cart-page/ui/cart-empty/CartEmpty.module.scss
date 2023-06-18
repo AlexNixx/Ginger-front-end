@@ -1,0 +1,37 @@
+@use 'shared/styles/abstracts/mixins' as m;
+
+.emptyCart {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 3rem;
+	width: 100%;
+	height: calc(100vh - 80px - 3rem);
+	h1 {
+		font-size: var(--fs-xl);
+	}
+	img {
+		height: 15rem;
+		width: 15rem;
+
+		@include m.tablet {
+			height: 20rem;
+			width: 20rem;
+		}
+	}
+	h3 {
+		font-size: var(--fs-lg);
+	}
+	button {
+		width: 20rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		svg {
+			font-size: var(--fs-lg);
+		}
+	}
+}

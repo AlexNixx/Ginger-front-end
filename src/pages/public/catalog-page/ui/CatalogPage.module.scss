@@ -1,0 +1,69 @@
+@use 'shared/styles/abstracts/mixins' as m;
+
+.page {
+	display: grid;
+	gap: 2rem;
+	height: 100%;
+	width: 100%;
+
+	.header {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+
+		h1 {
+			font-size: var(--fs-xl);
+			font-weight: var(--fw-bold);
+			color: var(--color-text);
+		}
+
+		svg {
+			color: var(--color-grey);
+			width: 25px;
+			height: 25px;
+		}
+	}
+
+	.row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		padding: 0 0.1rem 0 0;
+
+		.searchField {
+			grid-column: 1/3;
+		}
+	}
+}
+
+@include m.desktop {
+	.page {
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.title {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+
+				h1 {
+					font-size: var(--fs-xxl);
+				}
+
+				svg {
+					width: 30px;
+					height: 30px;
+				}
+			}
+		}
+
+		.row {
+			display: grid;
+			grid-template-columns: 17rem 3fr;
+			width: 100%;
+			grid-gap: 2rem;
+		}
+	}
+}

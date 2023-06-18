@@ -26,13 +26,15 @@ export type ProductFormValues = {
 
 export type BrandFormValues = {
 	name: string
+	photoUrl: string
 }
 
 export type CategoryFormValues = {
 	name: string
+	photoUrl: string
 }
 
 export type ColorFormValues = {
 	name: string
-	rgb?: string
+	rgb: string
 }

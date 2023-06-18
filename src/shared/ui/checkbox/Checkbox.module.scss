@@ -1,0 +1,82 @@
+@use 'shared/styles/abstracts/mixins' as m;
+
+.checkbox {
+	cursor: pointer;
+
+	/* Customize the label (the container) */
+	.container {
+		display: flex;
+		position: relative;
+		padding-left: 2rem;
+		cursor: pointer;
+		user-select: none;
+		font-size: var(--fs-lg);
+
+		@include m.desktop {
+			font-size: var(--fs-sm);
+		}
+	}
+
+	/* Hide the browser's default checkbox */
+	.container input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+	}
+
+	/* Create a custom checkbox */
+	.checkmark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 18px;
+		width: 18px;
+		border-radius: 2px;
+		background-color: var(--color-grey);
+
+		@include m.desktop {
+			height: 14px;
+			width: 14px;
+		}
+	}
+
+	/* When the checkbox is checked, add a blue background */
+	.container input:checked ~ .checkmark {
+		background-color: var(--color-primary);
+	}
+
+	/* Create the checkmark/indicator (hidden when not checked) */
+	.checkmark:after {
+		content: '';
+		position: absolute;
+		display: none;
+	}
+
+	/* Show the checkmark when checked */
+	.container input:checked ~ .checkmark:after {
+		display: block;
+	}
+
+	/* Style the checkmark/indicator */
+	.container .checkmark:after {
+		left: 5px;
+		top: 1px;
+		width: 8px;
+		height: 13px;
+		border: solid var(--color-white);
+		border-width: 0 3px 3px 0;
+		transform: rotate(45deg);
+
+		@include m.desktop {
+			left: 4.5px;
+			width: 5px;
+			height: 10px;
+		}
+	}
+
+	&:hover {
+		color: var(--color-primary);
+	}
+}

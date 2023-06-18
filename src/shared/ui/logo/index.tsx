@@ -1,8 +1,5 @@
-import logo from "../../assets/images/logo.svg";
-import styles from "./Image.module.scss";
+import styles from './Logo.module.scss'
 
-const Logo = () => {
-	return <img src={logo} alt="gadgets-logo" className={styles.logo} />;
-};
-
-export { Logo };
+export const Logo = () => {
+	return <h1 className={styles.logo}>ginger</h1>
+}

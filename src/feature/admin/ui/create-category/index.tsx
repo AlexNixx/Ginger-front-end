@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import { useCreateCategoryMutation } from 'feature/admin/api/adminApi'
-import { FeatureForm } from 'entities/admin-forms'
+import { useCreateCategoryMutation } from 'entities/admin'
+import { AttributeForm } from 'entities/admin'
 import { toast } from 'react-hot-toast'
 import { CategoryFormValues } from 'feature/admin/lib/types'
 
@@ -19,17 +19,15 @@ const CreateCategory = () => {
 
 	const onSubmitForm = async (data: CategoryFormValues) => {
 		try {
-			await createCategory(data).unwrap()
+			const formData = new FormData()
+			formData.append('name', data.name)
+			formData.append('photoUrl', data.photoUrl[0])
+
+			await createCategory(formData).unwrap()
 		} catch (error) {}
 	}
 
-	return (
-		<FeatureForm
-			title={'Category'}
-			isColorForm={false}
-			onSubmitForm={onSubmitForm}
-		/>
-	)
+	return <AttributeForm title={'Category'} onSubmitForm={onSubmitForm} />
 }
 
 export { CreateCategory }

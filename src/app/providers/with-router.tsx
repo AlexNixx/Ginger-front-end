@@ -6,6 +6,6 @@ import { Loader } from 'shared/ui/loader'
 export const withRouter = (component: () => React.ReactNode) => () =>
 	(
 		<BrowserRouter>
-			<Suspense fallback={<Loader />}>{component()}</Suspense>
+			<Suspense fallback={<Loader fullScreen />}>{component()}</Suspense>
 		</BrowserRouter>
 	)

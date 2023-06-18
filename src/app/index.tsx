@@ -1,14 +1,20 @@
-import { withProviders, WithAuth } from './providers'
-import { Routing } from 'pages'
+import { withProviders } from './providers'
+import { InitAuth, InitTheme, WithToaster } from './hoc'
 
-import './styles/index.scss'
+import { Routing } from 'app/routes'
+
+import 'shared/styles/index.scss'
 
 const App = () => {
 	return (
 		<div className='app'>
-			<WithAuth>
-				<Routing />
-			</WithAuth>
+			<InitAuth>
+				<InitTheme>
+					<WithToaster>
+						<Routing />
+					</WithToaster>
+				</InitTheme>
+			</InitAuth>
 		</div>
 	)
 }
