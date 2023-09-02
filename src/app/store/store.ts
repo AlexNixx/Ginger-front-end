@@ -16,7 +16,6 @@ import { cartSlice } from 'entities/cart'
 import { userApi, userSlice } from 'entities/user'
 import { filterApi, filterSlice } from 'entities/filter'
 
-import { adminApi } from 'entities/admin'
 import { authApi } from 'entities/auth'
 import { productApi } from 'entities/product'
 import { orderApi } from 'entities/order'
@@ -25,7 +24,6 @@ const rootReducer = combineReducers({
 	userState: userSlice,
 	cartState: cartSlice,
 	filterState: filterSlice,
-	[adminApi.reducerPath]: adminApi.reducer,
 	[authApi.reducerPath]: authApi.reducer,
 	[productApi.reducerPath]: productApi.reducer,
 	[filterApi.reducerPath]: filterApi.reducer,
@@ -52,7 +50,6 @@ export const store = configureStore({
 			}
 		}).concat([
 			authApi.middleware,
-			adminApi.middleware,
 			productApi.middleware,
 			filterApi.middleware,
 			orderApi.middleware,
