@@ -7,7 +7,6 @@ import { CatalogPage } from 'pages/public/catalog-page'
 import { ProductPage } from 'pages/public/product-page'
 import { RegistrationPage } from 'pages/public/registration-page'
 
-import { AdminPage } from 'pages/protected/admin-page'
 import { OrderPage } from 'pages/protected/order-page'
 import { ProfilePage } from 'pages/protected/profile-page'
 import { CheckoutPage } from 'pages/protected/checkout-page'
@@ -38,11 +37,6 @@ export const Routing = () => {
 				<Route path={RoutesEnum.About} element={<AboutPage />} />
 				<Route path={RoutesEnum.Contact} element={<ContactPage />} />
 				<Route path={RoutesEnum.NotFount} element={<NotFoundPage />} />
-
-				{/* Protected Admin Routes */}
-				<Route element={<GuardRoute allowedRoles={['ADMIN']} />}>
-					<Route path={RoutesEnum.Admin} element={<AdminPage />} />
-				</Route>
 
 				{/* Protected User & Admin Routes */}
 				<Route element={<GuardRoute allowedRoles={['USER', 'ADMIN']} />}>
