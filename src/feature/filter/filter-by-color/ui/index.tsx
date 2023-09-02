@@ -13,7 +13,7 @@ import { useAppSelector } from 'shared/lib/hooks/useAppSelector'
 import { getOptions } from 'shared/lib/utils/getOptions'
 
 export const ColorFilter = () => {
-	const { data: colorsOption, isLoading, isFetching } = useGetAllColorQuery()
+	const { data: colorsResponse, isLoading, isFetching } = useGetAllColorQuery()
 
 	const dispatch = useAppDispatch()
 	const selectedColors = useAppSelector(getSelectedColors)
@@ -24,7 +24,7 @@ export const ColorFilter = () => {
 
 	const isOptionsLoading = isLoading || isFetching
 
-	if (!colorsOption && !isOptionsLoading)
+	if (!colorsResponse && !isOptionsLoading)
 		return (
 			<Accordion title='Colors'>
 				<p>Colors not found</p>
@@ -41,7 +41,7 @@ export const ColorFilter = () => {
 	return (
 		<Accordion title='Colors'>
 			<CheckboxGroup
-				options={getOptions(colorsOption!)}
+				options={getOptions(colorsResponse?.colors!)}
 				selectedOptions={selectedColors}
 				onChange={handleColorsChange}
 			/>

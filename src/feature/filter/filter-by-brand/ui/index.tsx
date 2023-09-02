@@ -14,7 +14,7 @@ import { useAppSelector } from 'shared/lib/hooks/useAppSelector'
 import { getOptions } from 'shared/lib/utils/getOptions'
 
 export const BrandFilter = () => {
-	const { data: brandsOption, isLoading, isFetching } = useGetAllBrandQuery()
+	const { data: brandsResponse, isLoading, isFetching } = useGetAllBrandQuery()
 
 	const dispatch = useAppDispatch()
 	const selectedBrands = useAppSelector(getSelectedBrands)
@@ -25,7 +25,7 @@ export const BrandFilter = () => {
 
 	const isOptionsLoading = isLoading || isFetching
 
-	if (!brandsOption && !isOptionsLoading)
+	if (!brandsResponse && !isOptionsLoading)
 		return (
 			<Accordion title='Brands'>
 				<p>Brands not found</p>
@@ -42,7 +42,7 @@ export const BrandFilter = () => {
 	return (
 		<Accordion title='Brands' isOpen>
 			<CheckboxGroup
-				options={getOptions(brandsOption!)}
+				options={getOptions(brandsResponse?.brands!)}
 				selectedOptions={selectedBrands}
 				onChange={handleBrandsChange}
 			/>

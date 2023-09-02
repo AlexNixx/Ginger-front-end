@@ -17,7 +17,7 @@ export const CategoryCardsFilter = () => {
 	const dispatch = useAppDispatch()
 	const navigate = useNavigate()
 
-	const { data: categories, isLoading } = useGetAllCategoryQuery()
+	const { data: categoriesResponse, isLoading } = useGetAllCategoryQuery()
 
 	const handleCategoryChange = (selectedCategory: string[]) => {
 		dispatch(setCategories(selectedCategory))
@@ -31,7 +31,7 @@ export const CategoryCardsFilter = () => {
 					<Skeleton key={index} height={'100%'} />
 				))}
 
-			{categories?.slice(0, 6).map(category => (
+			{categoriesResponse?.categories?.slice(0, 6).map(category => (
 				<CategoryCard
 					category={category}
 					key={category._id}

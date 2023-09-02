@@ -15,7 +15,7 @@ import { getOptions } from 'shared/lib/utils/getOptions'
 
 export const CategoryFilter = () => {
 	const {
-		data: categoriesOption,
+		data: categoriesResponse,
 		isLoading,
 		isFetching
 	} = useGetAllCategoryQuery()
@@ -29,7 +29,7 @@ export const CategoryFilter = () => {
 
 	const isOptionsLoading = isLoading || isFetching
 
-	if (!categoriesOption && !isOptionsLoading)
+	if (!categoriesResponse && !isOptionsLoading)
 		return (
 			<Accordion title='Categories'>
 				<p>Categories not found</p>
@@ -46,7 +46,7 @@ export const CategoryFilter = () => {
 	return (
 		<Accordion title='Categories' isOpen>
 			<CheckboxGroup
-				options={getOptions(categoriesOption!)}
+				options={getOptions(categoriesResponse?.categories!)}
 				selectedOptions={selectedCategories}
 				onChange={handleCategoriesChange}
 			/>
